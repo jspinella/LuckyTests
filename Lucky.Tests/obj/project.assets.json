@@ -6622,11 +6622,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\james\\source\\repos\\Lucky.Tests\\Lucky.Tests\\Lucky.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\james\\Documents\\GitHub\\LuckyTests\\Lucky.Tests\\Lucky.Tests.csproj",
       "projectName": "Lucky.Tests",
-      "projectPath": "C:\\Users\\james\\source\\repos\\Lucky.Tests\\Lucky.Tests\\Lucky.Tests.csproj",
+      "projectPath": "C:\\Users\\james\\Documents\\GitHub\\LuckyTests\\Lucky.Tests\\Lucky.Tests.csproj",
       "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\james\\source\\repos\\Lucky.Tests\\Lucky.Tests\\obj\\",
+      "outputPath": "C:\\Users\\james\\Documents\\GitHub\\LuckyTests\\Lucky.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

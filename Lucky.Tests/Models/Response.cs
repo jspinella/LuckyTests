@@ -6,9 +6,11 @@ namespace Lucky.Tests.Models
 {
     public class Response
     {
-        public string src { get; set; }
-        public int? height { get; set; }
-        public int? width { get; set; }
-        public string url { get; set; }
+        public string id { get; set; }
+        public string img { get; set; }
+        public string question { get; set; }
+        public string answer1 { get; set; }
+        public string answer2 { get; set; }
+        public string answer3 { get; set; }
     }
 }

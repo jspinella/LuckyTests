@@ -39,10 +39,12 @@ namespace Lucky.Tests
                 .ReceiveJson<Response>();
 
             Assert.NotNull(response);
-            Assert.True(response.height > 0); //returns random values for height and width when size not specified
-            Assert.True(response.width > 0);
-            Assert.True(response.src == $"{defaultSrcBase}{response.width}x{response.height}.png");
-            Assert.True(response.url == defaultUrl);
+            Assert.Equal("Answer 1", response.answer1);
+            Assert.Equal("Answer 2", response.answer2);
+            Assert.Equal("Answer 3", response.answer3);
+            Assert.Equal("test", response.id);
+            Assert.Equal("https://via.placeholder.com/350x150", response.img);
+            Assert.Equal("Which of the following do you prefer?", response.question);
         }
 
         /// <summary>
@@ -68,11 +70,13 @@ namespace Lucky.Tests
                 })
                 .ReceiveJson<Response>();
 
-            Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
+            Assert.NotNull(response);
+            Assert.Null(response.answer1);
+            Assert.Null(response.answer2);
+            Assert.Null(response.answer3);
+            Assert.Null(response.id);
+            Assert.Null(response.img);
+            Assert.Null(response.question);
         }
 
         /// <summary>
@@ -98,11 +102,13 @@ namespace Lucky.Tests
                 })
                 .ReceiveJson<Response>();
 
-            Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
+            Assert.NotNull(response);
+            Assert.Null(response.answer1);
+            Assert.Null(response.answer2);
+            Assert.Null(response.answer3);
+            Assert.Null(response.id);
+            Assert.Null(response.img);
+            Assert.Null(response.question);
         }
 
         /// <summary>
@@ -128,11 +134,13 @@ namespace Lucky.Tests
                 })
                 .ReceiveJson<Response>();
 
-            Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
+            Assert.NotNull(response);
+            Assert.Null(response.answer1);
+            Assert.Null(response.answer2);
+            Assert.Null(response.answer3);
+            Assert.Null(response.id);
+            Assert.Null(response.img);
+            Assert.Null(response.question);
         }
 
         /// <summary>
@@ -158,11 +166,13 @@ namespace Lucky.Tests
                 })
                 .ReceiveJson<Response>();
 
-            Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
+            Assert.NotNull(response);
+            Assert.Null(response.answer1);
+            Assert.Null(response.answer2);
+            Assert.Null(response.answer3);
+            Assert.Null(response.id);
+            Assert.Null(response.img);
+            Assert.Null(response.question);
         }
 
         [Fact]
@@ -187,10 +197,9 @@ namespace Lucky.Tests
                 .ReceiveJson<Response>();
 
             Assert.NotNull(response);
-            Assert.True(response.height == mock.ImageSize.Height);
-            Assert.True(response.width == mock.ImageSize.Width);
-            Assert.True(response.src == mock.src);
-            Assert.Contains("http://api.luckymobility.com/api/ads/", response.url);
+            Assert.NotNull(response.id);
+            Assert.Equal(mock.img, response.img);
+            //TODO: Set up question and answers? 
         }
 
         [Fact]
@@ -214,11 +223,13 @@ namespace Lucky.Tests
                 })
                 .ReceiveJson<Response>();
 
-            Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
+            Assert.NotNull(response);
+            Assert.Null(response.answer1);
+            Assert.Null(response.answer2);
+            Assert.Null(response.answer3);
+            Assert.Null(response.id);
+            Assert.Null(response.img);
+            Assert.Null(response.question);
         }
 
         /// <summary>
@@ -247,10 +258,6 @@ namespace Lucky.Tests
                 .ReceiveJson<Response>();
 
             Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == mock.ImageSize.Height); // but all properties are
-            Assert.True(response.width == mock.ImageSize.Width);
-            Assert.True(response.src == mock.src);
-            Assert.Contains("http://api.luckymobility.com/api/ads/", response.url);
         }
 
         /// <summary>
@@ -281,10 +288,6 @@ namespace Lucky.Tests
                 .ReceiveJson<Response>();
 
             Assert.NotNull(response); // response is not null or empty
-            Assert.True(response.height == null); // but all properties are
-            Assert.True(response.width == null);
-            Assert.True(response.src == null);
-            Assert.True(response.url == null);
         }
 
         /// <summary>
@@ -313,8 +316,6 @@ namespace Lucky.Tests
                 .ReceiveJson<Response>();
 
             Assert.NotNull(response);
-            Assert.True(response.height == mock.ImageSize.Height);
-            Assert.True(response.width == mock.ImageSize.Width);
         }
 
         /// <summary>

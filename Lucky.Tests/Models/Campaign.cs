@@ -10,7 +10,7 @@ namespace Lucky.Tests.Models
         public Location Location { get; set; }
         public Audience Audience { get; set; }
         public ImageSize ImageSize { get; set; }
-        public string src { get; set; }
+        public string img { get; set; }
     }
 
     public class Location
